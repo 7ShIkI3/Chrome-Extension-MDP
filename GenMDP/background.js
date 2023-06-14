@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Sélectionnez les boutons par leur ID
     const generateBTN = document.getElementById("generateBTN");
     const moreButton = document.getElementById("moreButton");
+    const donationButton = document.getElementById("donationButton");
 
     // Ajoutez les gestionnaires d'événements aux boutons
     generateBTN.addEventListener("click", generatePassword);
@@ -21,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ajouter un gestionnaire d'événement au clic sur le bouton "More"
     moreButton.addEventListener("click", function () {
         const url = "https://gen-mdp.netlify.app/"; // Remplacez cette URL par celle que vous souhaitez ouvrir
+        chrome.tabs.create({ url: url });
+    });
+
+    donationButton.addEventListener("click", function () {
+        const url = "https://gen-mdp.netlify.app/donation"; // Remplacez cette URL par celle que vous souhaitez ouvrir
         chrome.tabs.create({ url: url });
     });
 });
